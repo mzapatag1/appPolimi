@@ -35,9 +35,27 @@ class MyApp extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
-              Text('Hello Home'),
-              Text('Hello Find Nutritionist'),
-              Text('Hello My Appointments'),
+              Column(
+                children: <Widget>[
+                  Text('Hello Home'),
+                ],
+                mainAxisAlignment:  MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+              ),
+              Column(
+                children: <Widget>[
+                  Text('Hello Find Nutritionist'),
+                ],
+                mainAxisAlignment:  MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+              ),
+              Column(
+                children: <Widget>[
+                  Text('Hello My Appointments'),
+                ],
+                mainAxisAlignment:  MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+              ),
             ],
           ),
         ),
