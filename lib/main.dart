@@ -1,66 +1,71 @@
 import 'package:flutter/material.dart';
+import './home.dart' as home;
+import './profile.dart' as profile;
+import './search.dart' as search;
+import './myAppoints.dart' as appointments;
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(new MaterialApp(
+    home: new Tabs()
+  )
+  ); 
+}
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class Tabs extends StatefulWidget{
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'NutriApp',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.lightGreen,
-      ),
-      home: DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.home)),
-                Tab(icon: Icon(Icons.search)),
-                Tab(icon: Icon(Icons.list)),
-              ],
-            ),
-            title: Text('NutriApp'),
-          ),
-          body: TabBarView(
-            children: [
-              Column(
-                children: <Widget>[
-                  Text('Hello Home'),
-                ],
-                mainAxisAlignment:  MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-              ),
-              Column(
-                children: <Widget>[
-                  Text('Hello Find Nutritionist'),
-                ],
-                mainAxisAlignment:  MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-              ),
-              Column(
-                children: <Widget>[
-                  Text('Hello My Appointments'),
-                ],
-                mainAxisAlignment:  MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-              ),
-            ],
+  TabsState createState() => new TabsState();
+
+}
+
+class TabsState extends State<Tabs> with SingleTickerProviderStateMixin {
+
+  TabController controller;
+
+  @override
+  void initState(){
+    super.initState();
+    controller = new TabController(vsync: this, length: 4);
+  }
+
+  @override
+  void dispose(){
+    controller.dispose();
+    super.dispose();
+  }
+  @override
+  Widget build(BuildContext context){
+    return new Scaffold(
+      appBar: new AppBar(
+        title: Text("NutriApp",
+        style: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
+          letterSpacing: 1.50,
           ),
         ),
+        backgroundColor: Colors.lightGreen[400],
+        bottom: new TabBar(
+          controller: controller,
+          tabs: <Tab>[
+            new Tab(icon: new Icon(Icons.home)),
+            new Tab(icon: new Icon(Icons.search)),
+            new Tab(icon: new Icon(Icons.calendar_today)),
+            new Tab(icon: new Icon(Icons.person)),
+
+        ]
+        )
+        ),
+      body: new TabBarView(
+        controller: controller,
+        children: <Widget>[
+          new home.Home(),
+          new search.Search(),
+          new appointments.MyAppoints(),
+          new profile.Profile()
+          ],
+        
       )
+
     );
   }
 }
-
