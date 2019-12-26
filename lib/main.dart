@@ -1,71 +1,79 @@
 import 'package:flutter/material.dart';
+import './sign_in.dart' as sign_in;
 import './home.dart' as home;
-import './profile.dart' as profile;
-import './search.dart' as search;
-import './myAppoints.dart' as appointments;
 
 void main() {
   runApp(new MaterialApp(
-    home: new Tabs()
+    home: new LoginPage()
   )
   ); 
 }
 
-class Tabs extends StatefulWidget{
+class LoginPage extends StatefulWidget {
   @override
-  TabsState createState() => new TabsState();
-
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class TabsState extends State<Tabs> with SingleTickerProviderStateMixin {
-
-  TabController controller;
-
+class _LoginPageState extends State<LoginPage> {
   @override
-  void initState(){
-    super.initState();
-    controller = new TabController(vsync: this, length: 4);
-  }
-
-  @override
-  void dispose(){
-    controller.dispose();
-    super.dispose();
-  }
-  @override
-  Widget build(BuildContext context){
-    return new Scaffold(
-      appBar: new AppBar(
-        title: Text("NutriApp",
-        style: TextStyle(
-          fontSize: 25,
-          fontWeight: FontWeight.bold,
-          letterSpacing: 1.50,
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        color: Colors.white,
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              FlutterLogo(size: 150),
+              SizedBox(height: 50),
+              _signInButton(),
+            ],
           ),
         ),
-        backgroundColor: Colors.lightGreen[400],
-        bottom: new TabBar(
-          controller: controller,
-          tabs: <Tab>[
-            new Tab(icon: new Icon(Icons.home)),
-            new Tab(icon: new Icon(Icons.search)),
-            new Tab(icon: new Icon(Icons.calendar_today)),
-            new Tab(icon: new Icon(Icons.person)),
+      ),
+    );
+  }
 
-        ]
-        )
-        ),
-      body: new TabBarView(
-        controller: controller,
-        children: <Widget>[
-          new home.Home(),
-          new search.Search(),
-          new appointments.MyAppoints(),
-          new profile.Profile()
+Widget _signInButton() {
+  return OutlineButton(
+      splashColor: Colors.grey,
+      onPressed: () {
+        sign_in.signInWithGoogle().whenComplete(() {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return new home.Tabs();
+              },
+            ),
+          );
+        });
+      },
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+      highlightElevation: 0,
+      borderSide: BorderSide(color: Colors.grey),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image(image: AssetImage("assets/google_logo.png"), height: 35.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Text(
+                'Sign in with Google',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.grey,
+                ),
+              ),
+            )
           ],
-        
-      )
-
+        ),
+      ),
     );
   }
 }
+
+///////////////////////////////////////////////

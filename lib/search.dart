@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
 
 class Search extends StatelessWidget{
   @override  Widget build(BuildContext context){
     return Scaffold(
-    appBar: AppBar(
-      title: Text('Explore'),
-      backgroundColor: Colors.lightGreen[200],
-      centerTitle: true,
-    )
     );
   } 
 }
