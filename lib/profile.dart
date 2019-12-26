@@ -19,13 +19,13 @@ class Profile extends StatelessWidget{
             child: Container(
             color: Colors.grey[300].withOpacity(0.8),
           ),
-          clipper: getClipper(),
+          clipper: GetClipper(),
         ),
         ClipPath(
           child: Container(
             color: Colors.lightGreenAccent.withOpacity(0.5),
           ),
-          clipper: getGreenClipper(),
+          clipper: GetGreenClipper(),
         ),
         Positioned(
           width: 350.0,
@@ -111,7 +111,7 @@ class Profile extends StatelessWidget{
   } 
 }
 
-class getClipper extends CustomClipper<Path>{
+class GetClipper extends CustomClipper<Path>{
   @override
   Path getClip(Size size){
     var path = new Path();
@@ -129,7 +129,7 @@ class getClipper extends CustomClipper<Path>{
   }
 }
 
-class getGreenClipper extends CustomClipper<Path>{
+class GetGreenClipper extends CustomClipper<Path>{
   @override
   Path getClip(Size size){
     var path = new Path();
