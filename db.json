@@ -1,5 +1,6 @@
-[
-  {
+{
+  "Nutris": [
+    {
     "id": 1,
     "name": "Leanne Graham",
     "username": "Bret",
@@ -34,4 +35,8 @@
     "email": "Lucio_Hettinger@annie.ca",
     "website": "demarco.info"
   }
-]
+  ],
+  "profile": {
+    "name": "Nutri List"
+  }
+}
