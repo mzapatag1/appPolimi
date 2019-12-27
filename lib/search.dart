@@ -14,9 +14,25 @@ class Search extends StatefulWidget{
   SearchState createState() => SearchState();
 }
 
+class Debouncer {
+  final int milliseconds;
+  VoidCallback action;
+  Timer _timer;
+ 
+  Debouncer({this.milliseconds});
+ 
+  run(VoidCallback action) {
+    if (null != _timer) {
+      _timer.cancel();
+    }
+    _timer = Timer(Duration(milliseconds: milliseconds), action);
+  }
+}
+
 class SearchState extends State<Search>{
   List <DocProfile> users = List();
   List <DocProfile> filteredUsers = List();
+  
 
   @override
   void initState() {
@@ -42,7 +58,7 @@ class SearchState extends State<Search>{
               setState(() {
                 filteredUsers = users.where((u)=>(
                   u.name.toLowerCase().contains(string.toLowerCase()) ||
-                  u.email.toLowerCase().contains(string.toLowerCase())))
+                  u.specialty.toLowerCase().contains(string.toLowerCase())))
                   .toList();
               });
             },
@@ -76,7 +92,7 @@ class SearchState extends State<Search>{
                         SizedBox(height: 5.00,),
 
                         Text(
-                          filteredUsers[index].email,
+                          filteredUsers[index].specialty,
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.grey,

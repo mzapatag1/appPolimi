@@ -5,12 +5,11 @@ class DocProfile{
   String name;
   String specialty; 
   int number;
-  int experience;
+  String experience;
   String email;
   
   // attribute for location!!!!!!!!!!!!!!!!
   
-  // Doc methods: we won't have any because we're creating the app for the client. 
 
   //Constructor:
 
@@ -20,9 +19,9 @@ class DocProfile{
     return DocProfile(
       name: json["name"] as String,
       specialty: json["specialty"] as String,
-      number: json["number"] as int,
-      experience: json["experience"] as int,
-      email: json["email"] as String,
+      //number: json["number"] as int,
+      //experience: json["experience"] as String,
+      //email: json["email"] as String,
       
     );
   }
@@ -31,13 +30,3 @@ class DocProfile{
  
 }
 
- 
-  /* 
-  docProfile(String name, String specialty, int number, String email, String description){
-    this.name = name;
-    this.specialty = specialty;
-    this.experience = experience;
-    this.number = number;
-    this.email = email;
-    this.description = description;
-  } */

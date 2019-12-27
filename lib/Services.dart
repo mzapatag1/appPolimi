@@ -6,7 +6,8 @@ import 'dart:convert';
  
 class Services {
   //EL LINKKKKKK
-  static const String url = 'https://jsonplaceholder.typicode.com/users';
+  static const String url = 'https://my-json-server.typicode.com/mzapatag1/appPolimi/Nutris';
+  //https://jsonplaceholder.typicode.com/users
  
   static Future<List<DocProfile>> getUsers() async {
     try {
