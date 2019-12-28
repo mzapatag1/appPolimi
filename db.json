@@ -7,7 +7,7 @@
     "email": "paardilaa@unal.edu.co",
     "number": "3208735538",
     "experience":"2 years",
-    "consultationFee":"200"
+    "consultationFee":"€200"
   },
   {
     "id": 2,
@@ -16,7 +16,7 @@
     "email": "Lcsanchezg@unal.edu.co",
     "number": "3103805829",
     "experience":"14 years",
-    "consultationFee":"1400"
+    "consultationFee":"€1400"
   },
   {
     "id": 3,
@@ -25,7 +25,7 @@
     "email": "Saparomu@gmail.com",
     "number": "3142908031",
     "experience":"2 years",
-    "consultationFee":"200"
+    "consultationFee":"€200"
   },
   {
     "id": 4,
@@ -34,7 +34,7 @@
     "email": "Carolina.cescobar1@gmail.com",
     "number": "3012931536",
     "experience":"1 year",
-    "consultationFee":"100"
+    "consultationFee":"€100"
   },
   {
     "id": 5,
@@ -43,7 +43,7 @@
     "email": "diego@homi.com",
     "number": "3194314948",
     "experience":"15 years",
-    "consultationFee":"1500"
+    "consultationFee":"€1500"
   }
   ],
   "profile": {
