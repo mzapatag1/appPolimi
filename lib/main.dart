@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import './sign_in.dart' as sign_in;
 import './home.dart' as home;
+import 'package:intl/date_symbol_data_local.dart';
 
 void main() {
-  runApp(new MaterialApp(
+  initializeDateFormatting().then((_) => runApp(new MaterialApp(
     home: new LoginPage()
   )
-  ); 
+  )); 
 }
 
 class LoginPage extends StatefulWidget {
@@ -25,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Image(image: AssetImage("assets/NutriAppLogo.jpeg"), height: 400.0),
+              Image(image: AssetImage("assets/NutriAppLogo.jpeg"), height: 450.0),
               SizedBox(height: 50),
               _signInButton(),
             ],

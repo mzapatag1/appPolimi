@@ -36,12 +36,12 @@ class Profile extends StatelessWidget{
                 backgroundImage: NetworkImage(
                   imageUrl,
                 ),
-                radius: 60,
+                radius: 120,
                 backgroundColor: Colors.transparent,
               ),
 
 
-            SizedBox(height: 90.0),
+            SizedBox(height: 50.0),
             Text(
                 name,
                 style: TextStyle(
@@ -58,39 +58,15 @@ class Profile extends StatelessWidget{
                 fontStyle: FontStyle.italic
               ),
             ),
+                 
             
-            
-            SizedBox(height: 30.0),
-            Container(
-              height: 30.0,
-              width: 95.0,
-              child: Material(
-                borderRadius: BorderRadius.circular(20),
-                shadowColor: Colors.limeAccent,
-                color: Colors.lightGreen[200],
-                child: GestureDetector(
-                  onTap: (){
-                    print('Edit');
-                    //PLACEHOLDER
-                  },
-                  child: Center(
-                      child: Text('Edit my data',
-                      style: TextStyle(color: Colors.black, ),
-                      ),
-                    ),
-                    
-                ),
-              ),
-            ),
-            
-            
-            SizedBox(height: 50.0),
+            SizedBox(height: 40.0),
             RaisedButton(
                 onPressed: () {
                   signOutGoogle();
                   Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) {return LoginPage();}), ModalRoute.withName('/'));
                 },
-                color: Colors.deepPurple,
+                color: Colors.purple[300],
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
