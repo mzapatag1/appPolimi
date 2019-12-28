@@ -1,7 +1,7 @@
 {
   "Nutris": [
     {
-    "id": 1,
+    "id": "1.jpg",
     "name": "Paula Andrea Ardila Arevalo",
     "specialty": "Pediatric",
     "email": "paardilaa@unal.edu.co",
@@ -10,7 +10,7 @@
     "consultationFee":"€200"
   },
   {
-    "id": 2,
+    "id": "2.jpg",
     "name": "Laura Cristina Sanchez Giraldo",
     "specialty": "Pediatric",
     "email": "Lcsanchezg@unal.edu.co",
@@ -19,7 +19,7 @@
     "consultationFee":"€1400"
   },
   {
-    "id": 3,
+    "id": "3.jpg",
     "name": "Sandra Paola Rojas Murillo",
     "specialty": "Pediatric",
     "email": "Saparomu@gmail.com",
@@ -28,7 +28,7 @@
     "consultationFee":"€200"
   },
   {
-    "id": 4,
+    "id": "4.jpg",
     "name": "Carolina Escobar Cardona",
     "specialty": "Pediatric",
     "email": "Carolina.cescobar1@gmail.com",
@@ -37,7 +37,7 @@
     "consultationFee":"€100"
   },
   {
-    "id": 5,
+    "id": "5.jpg",
     "name": "Diego Vargas",
     "specialty": "Admin",
     "email": "diego@homi.com",
